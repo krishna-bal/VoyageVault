@@ -1,0 +1,37 @@
+#filters{
+        margin : 2em 0 2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .filter{
+        /* text-align: center; */
+        opacity: 0.6;
+    }
+    .filter p{
+        font-size: .7rem;
+        margin: 0;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .active-filter {
+        opacity: 1;
+        border-bottom: 2px solid black;
+        padding-bottom: 4px;
+    }
+    .tax-toggle{
+        margin-left: 10rem;
+        border: 1px solid;
+        padding: .8rem;
+        border-radius: 2rem;
+    }
+
+    .tax_info{
+        display: none;
+    }
+    
+    /* .fa-solid{
+        font-size: 18px;
+    } */

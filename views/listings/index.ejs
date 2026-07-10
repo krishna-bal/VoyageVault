@@ -1,0 +1,120 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body> 
+        <div id="filters">
+            <div class="filter" data-category="Trending">
+                <form action="/listings/filter/Trending" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-fire"></i></div>
+                        <p>Trending</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Rooms">
+                <form action="/listings/filter/Rooms" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-bed"></i></i></div>
+                        <p>Rooms</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Iconic Cities">
+                <form action="/listings/filter/Iconic Cities" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-mountain-city"></i></div>
+                        <p>Iconic Cities</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Mountains">
+                <form action="/listings/filter/Mountains" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-mountain"></i></div>
+                        <p>Mountains</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Castles">
+                <form action="/listings/filter/Castles" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-brands fa-fort-awesome"></i></div>
+                        <p>Castles</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Amazing Polls">
+                <form action="/listings/filter/Amazing Polls" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-person-swimming"></i></div>
+                        <p>Amazing Polls</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Camping">
+                <form action="/listings/filter/Camping" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-campground"></i></div>
+                        <p>Camping</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Farms">
+                <form action="/listings/filter/Farms" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-cow"></i></div>
+                        <p>Farms</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Arctic">
+                <form action="/listings/filter/Arctic" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-snowflake"></i></div>
+                        <p>Arctic</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Villa">
+                <form action="/listings/filter/Villa" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-hotel"></i></div>
+                        <p>Villa</p>
+                    </button>
+                </form>
+            </div>
+            <div class="filter" data-category="Beach">
+                <form action="/listings/filter/Beach" method="GET">
+                    <button class="btn">
+                        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                        <p>Beach</p>
+                    </button>
+                </form>
+            </div>
+            <div class="tax-toggle">
+                <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                    <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+                </div>
+            </div>       
+        </div>
+
+        <div class="row row-cols-lg-3 row-cols-mid-2 row-cols-sm-1">
+            <% for(listing of listings){ %>
+                <a class="card-link" href="/listings/<%= listing._id %>">
+                    <div class="card col listing-card">
+                        <img src=<%=listing.image.url %> class="card-img-top" alt= <%= listing.image.filename %> style="height:20rem"; >
+                        <div class="card-img-overlay">
+                            Radhe Radhe
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-text"><b>
+                                    <%= listing.title %>
+                                </b></h5>
+                            <p class="card-text"> &#8377;<%= listing.price.toLocaleString('en-IN') %> / night &nbsp;&nbsp;&nbsp;<i class="tax_info">+18% GST</i></p>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+
+    </body>
